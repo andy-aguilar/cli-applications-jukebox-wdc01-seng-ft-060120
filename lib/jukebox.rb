@@ -64,7 +64,7 @@ def run (songs)
       user_input = gets.strip
     end
     if user_input == "play"
-      play
+      play (songs)
       puts "Please enter a command:"
       user_input = gets.strip
     end
