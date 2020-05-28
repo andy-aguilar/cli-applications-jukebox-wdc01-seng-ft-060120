@@ -54,7 +54,7 @@ def play (songs)
     end
 end
 
-def run 
+def run (songs)
   puts "Please enter a command:"
   user_input = gets.strip
   until user_input == "exit" do
