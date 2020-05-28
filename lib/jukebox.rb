@@ -26,6 +26,7 @@ def help
   puts "- list : displays a list of songs you can play"
   puts "- play : lets you choose a song to play"
   puts "- exit : exits this program"
+  puts "Please enter a command:"
 end
 
 def list (song_array)
@@ -33,6 +34,7 @@ def list (song_array)
     list_number = index + 1
     puts "#{list_number}. #{song}"
   end
+  puts "Please enter a command:"
 end
 
 def exit_jukebox
@@ -45,9 +47,11 @@ def play (songs)
     if song_input.to_i <= 9 && song_input.to_i > 0
       song_index = song_input.to_i - 1
       puts "Playing #{songs[song_index]}"
+      puts "Please enter a command:"
     end
     if songs.include? song_input
       puts "Playing #{song_input}"
+      puts "Please enter a command:"
     elsif song_input.to_i <= 0 || song_input.to_i > 9
       puts "Invalid input, please try again"
       song_input = gets.strip
@@ -60,12 +64,15 @@ def run (songs)
   until user_input == "exit" do
     if user_input == "help"
       help
+      user_input = gets.strip
     end
     if user_input == "play"
       play
+      user_input = gets.strip
     end
     if user_input == "list"
       list (songs)
+      user_input = gets.strip
     end
   end 
   exit_jukebox
